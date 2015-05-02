@@ -58,6 +58,7 @@ run 'bundle install'
 # Create test database
 #
 rake 'db:create', env: 'test'
+rake 'db:create', env: 'development'
 
 #
 # Initialize Git repository
@@ -67,3 +68,7 @@ after_bundle do
   git add: '--all .'
   git commit: %q{ -m 'Initial commit' }
 end
+
+# TODO
+# Copy default template files
+#
