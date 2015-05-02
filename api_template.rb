@@ -29,6 +29,9 @@ gem 'rack-cors', require: 'rack/cors'
 # Model JSON serialization
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: '0-9-stable'
 
+# Use figaro to store env secrets securely
+gem 'figaro'
+
 if yes? 'Using Heroku in Production?'
   gem_group :production do
     gem 'rails_12factor'
@@ -48,6 +51,7 @@ if yes? 'Using RSpec & FactoryGirl instead of Test::Unit & Fixtures?'
   after_bundle do
     run 'rails g rspec:install'
     run 'bundle binstubs rspec-core'
+    run 'figaro install'
     run 'rm -r test/'
   end
 end
