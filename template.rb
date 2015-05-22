@@ -19,6 +19,14 @@ run 'rm README.rdoc'
 gem 'unicorn'
 gem 'unicorn-rails'
 
+#
+# Front-End
+#
+if yes? 'Are you building a front-end app?'
+  gem 'bootstrap-sass'
+  gem 'haml-rails'
+end
+
 if yes? 'Are you building an API?'
   # Generate JWT tokens for stateless authentication
   gem 'jwt'
