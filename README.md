@@ -1,5 +1,5 @@
-# rails-api-template
-A rails api application template (see documentation about [Rails application templates](http://guides.rubyonrails.org/rails_application_templates.html))
+# rails templates
+A rails application template (see documentation about [Rails application templates](http://guides.rubyonrails.org/rails_application_templates.html))
 
 This is a template I use for my [rails-api](https://github.com/rails-api/rails-api) applications (but it would work just the same with a regular rails application)
 
