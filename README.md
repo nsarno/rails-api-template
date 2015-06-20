@@ -24,3 +24,6 @@ $ rails-api new app -d postgresql -m rocket/rocket.rb
 - Create test & development databases
 - Initialize Git repository & commit
 
+## TODO
+
+- bundle as a gem
