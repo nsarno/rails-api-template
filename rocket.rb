@@ -7,24 +7,46 @@
 ##                                                                  | |
 ##                                                                  |_|
 
+# Add the current directory to the path Thor uses
+# to look up files
+def source_paths
+  Array(super) + [File.expand_path(File.dirname(__FILE__))]
+end
+
 #
 # Clean up
 #
-run 'rm README.rdoc'
+remove_file 'README.rdoc'
+remove_file 'Gemfile'
+remove_file '.gitignore'
 
 #
 # Gemfile Configuration
 #
+run 'touch Gemfile'
+add_source 'https://rubygems.org'
+gem 'rails', '4.2.2'
+gem 'rails-api'
+
+# Use Puma as the app server
 gem 'puma'
+
+# Use Postgresql as the database
+gem 'pg'
 
 # Use ActiveModelSerializers to serialize JSON responses
 gem 'active_model_serializers', '~> 0.10.0.rc1'
 
-# Enable CORS requests
-gem 'rack-cors', require: 'rack/cors'
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'rack-cors'
 
-# Generate JWT tokens for stateless authentication
+# Use JWT tokens for stateless authentication
 gem 'jwt'
+
+gem_group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+end
 
 # Use Heroku in production
 gem_group :production do
@@ -32,6 +54,12 @@ gem_group :production do
 end
 
 run 'bundle install'
+
+#
+# Add required files
+#
+copy_file 'templates/Procfile'
+copy_file 'templates/puma.rb', 'config/puma.rb'
 
 #
 # Create test database
@@ -45,5 +73,5 @@ rake 'db:create', env: 'development'
 after_bundle do
   git :init
   git add: '--all .'
-  git commit: %q{ -m 'Generate base rails-api app with rails-api-template' }
+  git commit: "-a -m 'Initial commit'"
 end
