@@ -1,30 +1,26 @@
-# rails templates
-A rails application template (see documentation about [Rails application templates](http://guides.rubyonrails.org/rails_application_templates.html))
+# Rocket 🚀
+Rails ready to fire!
 
-This is a template I use for my [rails-api](https://github.com/rails-api/rails-api) applications (but it would work just the same with a regular rails application)
+A rails application template (see documentation about [Rails application templates](http://guides.rubyonrails.org/rails_application_templates.html)) for [rails-api](https://github.com/rails-api/rails-api) applications.
 
 ## Usage
 
-```bash
-$ rails-api new app -m api_template.rb
-```
-
-if you want to use Postgresql as your database:
+With Postgresql:
 
 ```bash
-$ rails-api new app -d postgresql -m api_template.rb
+$ rails-api new app -d postgresql -m rocket/rocket.rb
 ```
 
 ## What it does
 
-- Clean up useless files
-- Use Unicorn instead of Webrick
-- Use Rspec instead of Test::Unit (optional)
-- Use FactoryGirl with Rspec
-- Use JWT
-- Enable Rack CORS
+- Remove files we don't want
+- Use Puma as the app server
+- Copy Procfile & config/puma.rb for Puma
 - Use Active Model Serializers
-- Prepare for user of Heroku in production (optional)
-- Create test database
-- Initialize Git repository
+- Use Rack CORS & JWT
+- Use byebug in development and test
+- Use rails_12factor gem for Heroku in production
+- Run bundle install
+- Create test & development databases
+- Initialize Git repository & commit
 
