@@ -1,5 +1,5 @@
-# Rocket 🚀
-Rails ready to fire!
+# Rocket
+Rails ready to fire! 🚀
 
 A rails application template (see documentation about [Rails application templates](http://guides.rubyonrails.org/rails_application_templates.html)) for [rails-api](https://github.com/rails-api/rails-api) applications.
 
@@ -24,3 +24,6 @@ $ rails-api new app -d postgresql -m rocket/rocket.rb
 - Create test & development databases
 - Initialize Git repository & commit
 
+## TODO
+
+- bundle as a gem
