@@ -17,7 +17,7 @@ $ rails-api new app -d postgresql -m rocket/rocket.rb
 - Use Puma as the app server
 - Copy Procfile & config/puma.rb for Puma
 - Use Active Model Serializers
-- Use Rack CORS & JWT
+- Use Rack CORS & JWT with Knock
 - Use byebug in development and test
 - Use rails_12factor gem for Heroku in production
 - Run bundle install
